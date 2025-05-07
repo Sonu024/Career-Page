@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/src/index.css" rel="stylesheet">
+</head>
+ 
+<body class="dark:bg-gradient-to-r from-[#0f6670] to-[#0a3643]">
+  <h1 class="text-4xl font-bold text-center mb-7 mt-10 h-2 dark:text-white">Apply For This Post</h1>
+  <h2 class="text-xl font-semibold text-center mb-7 mt-10 dark:text-white">(Empower Your Tech Career)</h2>
+  <div class="dark:bg-gray-800 bg-gray-200 rounded shadow-md p-7 ml-30 mr-30">
+    <form>
+      <div >
+
+    <h3 class="dark:text-white text-lg mb-3 h-10 border-b border-gray-300">Personal Information</h3>
+    <div class="flex flex-wrap justify-between gap-5 mb-7">
+      <div class="w-[48%] mt-5">
+      <label for="firstname"></label>
+      <input
+        type="text"
+        id="first"
+        name="First"
+        class="w-[100%] p-3 text-lg rounded-lg text-black bg-white border border-transparent focus:outline-none placeholder-gray-600 focus:placeholder-transparent"
+        placeholder="First Name"
+      />
+      </div>
+
+      <div class="w-[48%] mt-5">
+      <input
+      type="text"
+      id="last"
+      name="Last"
+      class="w-[100%] p-3 text-lg rounded-lg text-black bg-white border border-transparent focus:outline-none placeholder-gray-600 focus:placeholder-transparent"
+      placeholder="Last Name"
+      />
+      </div>
+
+      <div class="w-[48%]">
+      <input
+      type="text"
+      id="phone"
+      name="Phone"
+      class="w-[100%] p-3 text-lg rounded-lg text-black bg-white border border-transparent focus:outline-none placeholder-gray-600 focus:placeholder-transparent appearance-none"
+      placeholder="Phone Number"
+      />
+      </div>
+
+      <div class="w-[48%]">
+        <input
+        type="email"
+        id="email"
+        name="Email"
+        class="w-[100%] p-3 text-lg rounded-lg text-black bg-white border border-transparent focus:outline-none placeholder-gray-600 focus:placeholder-transparent"
+        placeholder="Email Address"
+        />
+        </div>
+    </div>  
+
+
+    <h3 class="dark:text-white text-lg h-9">Address</h3>
+    <div class="flex flex-wrap justify-between gap-5 mb-7">
+      <div class="w-[48%]">
+        <input
+        type="text"
+        id="province"
+        className="Location"
+        class="w-[100%] p-3 text-lg rounded-lg text-black bg-white border border-transparent focus:outline-none placeholder-gray-600 focus:placeholder-transparent"
+        placeholder="Province"
+        />
+      </div>
+
+        <div class="w-[48%]">
+          <input
+          type="text"
+          id="city"
+          className="Location"
+          class="w-[100%] p-3 text-lg rounded-lg text-black bg-white border border-transparent focus:outline-none placeholder-gray-600 focus:placeholder-transparent"
+          placeholder="City"
+          />
+          </div>
+
+    </div>
+
+    <h3 class="dark:text-white text-lg h-9">Position Information</h3>
+    <div class="flex flex-wrap justify-between gap-5 mb-7">
+      <div class="w-[48%]">
+        <div  class="dropdown w-[100%] p-3 text-lg rounded-lg text-gray-600 bg-white border border-transparent focus:outline-none cursor-default">
+          Choose a position
+        </div>
+        <ul class="toggle hidden w-[180px] bg-white rounded-md shadow-md text-md absolute z-10 m-1">
+          <li class="block w-full bg-transparent p-1 hover:bg-gray-100 cursor-pointer">Product Designer</li>
+          <li class="block w-full bg-transparent p-1 hover:bg-gray-100 cursor-pointer">Digital Marketer</li>
+          <li class="block w-full bg-transparent p-1 hover:bg-gray-100 cursor-pointer">Software Developer</li>
+          <li class="block w-full bg-transparent p-1 hover:bg-gray-100 cursor-pointer">QA Tester</li>
+          <li class="block w-full bg-transparent p-1 hover:bg-gray-100 cursor-pointer">Ui/Ux Designer</li>
+          <li class="block w-full bg-transparent p-1 hover:bg-gray-100 cursor-pointer">Web Developer</li>
+          <li class="block w-full bg-transparent p-1 hover:bg-gray-100 cursor-pointer">Seo Supporter</li>
+          <li class="block w-full bg-transparent p-1 hover:bg-gray-100 cursor-pointer">WordPress Developer</li>
+        </ul>
+        </div>
+
+        <div class="w-[48%]">
+          <div  class="dropdown w-[100%] p-3 text-lg rounded-lg text-gray-600 bg-white border border-transparent focus:outline-none cursor-default">
+            Select job type
+          </div>
+          <ul  class="toggle hidden w-[180px] bg-white rounded-md shadow-md text-md absolute z-10 m-1">
+            <li class="block w-full bg-transparent p-1 hover:bg-gray-100 cursor-pointer">Product Designer</li>
+            <li class="block w-full bg-transparent p-1 hover:bg-gray-100 cursor-pointer">Digital Marketer</li>
+            <li class="block w-full bg-transparent p-1 hover:bg-gray-100 cursor-pointer">Software Developer</li>
+            <li class="block w-full bg-transparent p-1 hover:bg-gray-100 cursor-pointer">QA Tester</li>
+            <li class="block w-full bg-transparent p-1 hover:bg-gray-100 cursor-pointer">Ui/Ux Designer</li>
+            <li class="block w-full bg-transparent p-1 hover:bg-gray-100 cursor-pointer">Web Developer</li>
+            <li class="block w-full bg-transparent p-1 hover:bg-gray-100 cursor-pointer">Seo Supporter</li>
+            <li class="block w-full bg-transparent p-1 hover:bg-gray-100 cursor-pointer">WordPress Developer</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <h3 class="dark:text-white text-lg h-9">Qualification</h3>
+      <div>
+      <div class="w-[48%] mb-5">
+        <input
+        type="text"
+        id="academic"
+        name="academic"
+        class="w-[100%] p-3 text-lg rounded-lg text-black bg-white border border-transparent focus:outline-none placeholder-gray-600 focus:placeholder-transparent"
+        placeholder="Academic degree"
+        />
+        </div>
+      </div>
+
+      <h3 class="dark:text-white text-lg h-9">Portfolio link</h3>
+      <div class="w-[100%]">
+      <input
+      type="text"
+      id="portfolio"
+      name="Portfolio"
+      class="w-[100%] p-1 text-md rounded-lg text-black bg-white border border-transparent focus:outline-none placeholder-gray-600 focus:placeholder-transparent"
+      placeholder="Enter your Portfolio/Website Link"
+      />
+      </div>
+
+
+      </div>
+
+      <div class="mt-10">
+          <h3 class="text-xl font-medium mb-2 dark:text-white">Upload CV</h3>
+          <label class="cursor-pointer inline-block px-4 py-2 rounded-md border border-gray-300 dark:text-white text-sm font-semibold bg-transparent hover:bg-gray-700">
+            Choose File
+          <input type="file" id="inputfile" class="hidden"/>
+          </label>
+          <span id="filename" class="dark:text-white">No file choosen</span>
+      </div>
+
+      <div class="mt-5">
+          <textarea
+          class="w-full p-3 h-[150px] text-lg text-black border-none bg-white rounded resize-none overflow-hidden focus:outline-none"
+          placeholder="Cover Letter"
+          oninput="this.style.height = '150px'; this.style.height = this.scrollHeight + 'px'"
+          ></textarea>
+      </div>
+
+      <div class="flex justify-center mt-7">
+          <button 
+          type="submit"
+          class="bg-blue-500 text-lg text-white flex justify-center rounded pl-6 pr-6 pt-2 pb-2 mb-5 hover:bg-blue-700"
+          >Submit
+          </button>
+      </div>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
