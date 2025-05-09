@@ -3,15 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Form</title>
     <link href="/src/index.css" rel="stylesheet">
 </head>
  
-<body class="dark:bg-gradient-to-r from-[#0f6670] to-[#0a3643]">
-  <h1 class="text-4xl font-bold text-center mb-7 mt-10 h-2 dark:text-white">Apply For This Post</h1>
-  <h2 class="text-xl font-semibold text-center mb-7 mt-10 dark:text-white">(Empower Your Tech Career)</h2>
-  <div class="dark:bg-gray-800 bg-gray-200 rounded shadow-md p-7 ml-30 mr-30">
-    <form>
+<body class="bg-gray-400">
+
+  <h1 class="text-4xl font-bold text-center mb-7 mt-10 h-2 ">Apply For This Post</h1>
+  <h2 class="text-xl font-semibold text-center mb-7 mt-10 ">(Empower Your Tech Career)</h2>
+
+    <div class="ml-15 mr-15 mb-10 flex gap-5">
+      <div class="dark:bg-gray-800 flex-2 rounded text-white pt-5 pb-5 pl-8 pr-8">
+        <h2 class="text-2xl text-center pb-2 border-b border-gray-400">Software Developer</h2>
+
+        <div class="text-gray-300 text-sm flex justify-between">
+          <div>Job posted on 07 May, 2025</div>
+          <div>Apply before 06 Jun, 2025</div>
+        </div>
+
+
+        <div class="mt-7 mb-7">
+          <h2 class="text-xl font-semibold mb-2">Job Description:</h2>
+          <p class="text-gray-300">We are looking for a skilled and motivated Software Developer to join our IT team. The ideal candidate will be responsible for
+             building, enhancing, and maintaining software solutions that are scalable, secure, and performance-driven. You will work alongside
+              designers, developers, and product managers to deliver high-quality applications that meet business needs and user expectations.</p>
+        </div>
+
+        <div class="mt-4 mb-7">
+          <h2 class="text-xl font-semibold mb-2">Responsibilities:</h2>
+        <ul class="list-disc text-gray-300 ml-4">
+          <li class="h-7">Design, develop, test, and deploy software applications and features</li>
+          <li class="h-7">Collaborate with cross-functional teams (designers, product managers, QA)</li>
+          <li class="h-7">Write clean, efficient, and maintainable code</li>
+          <li class="h-7">Participate in code reviews and contribute to the team’s technical growth</li>
+          <li class="h-7">Troubleshoot, debug, and upgrade existing systems</li>
+          <li class="h-7">Stay updated with the latest industry trends and emerging technologies</li>
+          <li class="h-7">Ensure application security and data protection best practices</li>
+          <li class="h-7">Manage software documentation and technical specifications</li>
+        </ul>
+        </div>
+
+        <div class="mt-4 mb-7">
+          <h2 class="text-xl font-semibold mb-2">Requirements:</h2>
+        <ul class="list-disc text-gray-300 ml-4">
+          <li class="h-7">Bachelor’s degree in Computer Science, Information Technology, or a related field</li>
+          <li class="h-7">1–4 years of experience in software development</li>
+          <li class="h-7">Solid understanding of object-oriented programming and software design patterns</li>
+          <li class="h-7">Experience with version control systems (e.g., Git)</li>
+          <li class="h-7">Familiarity with Agile or Scrum methodologies</li>
+          <li class="h-7">Strong problem-solving and communication skills</li>
+          <li class="h-7">Ability to work independently and in a team environment</li>
+        </ul>
+        </div>
+
+
+        <div  class="mt-4 mb-7">
+          <h2 class="text-xl font-semibold mb-2">Required Skills:</h2>
+          <div class="flex gap-10">
+            <div class="bg-gray-600 p-2 rounded">JavaScript / TypeScript</div>
+            <div class="bg-gray-600 p-2 rounded">Python</div>
+            <div class="bg-gray-600 p-2 rounded">Java</div>
+            <div class="bg-gray-600 p-2 rounded">C# / .NET</div>
+          </div>
+        </div>
+      </div >
+
+      <div class=" flex-1 rounded text-white pt-5 pb-5 pl-2 pr-2">
+        <h2 class="text-indigo-600 text-xl font-bold h-5">Overview</h2>
+        <div class="grid grid-cols-[100px_auto] mt-3 p-4 bg-gray-600 rounded  text-md">
+          <div>Category</div>
+          <div  class="h-8"><span class="mr-2">:</span>    Software Developer</div> 
+
+          <div>Openings</div>
+          <div  class="h-8"><span class="mr-2">:</span>    1</div> 
+
+          <div>Location</div>
+          <div  class="h-8"><span class="mr-2">:</span>   Bharatpur-10, Chitwan</div> 
+
+          <div>Job level</div>
+          <div class="h-8"><span class="mr-2">:</span>   Mid Level</div> 
+
+          <div>Education</div>
+          <div class="h-8"><span class="mr-2">:</span>    Bachelors</div> 
+
+          <div>Salary</div>
+          <div  class="h-8"><span class="mr-2">:</span>   Negotiable</div> 
+
+          <div>Posted Date</div>
+          <div class="h-8"><span class="mr-2">:</span>     07 May, 2025</div> 
+
+          <div>Apply Date</div>
+          <div class="h-8"><span class="mr-2">:</span>    06 Jun, 2025</div> 
+
+        </div>
+      </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+  <div class="dark:bg-gray-800 bg-gray-200 rounded shadow-md pl-7 pr-7 pt-7 ml-80 mr-80 mb-2">
+    <form id="nameForm">
       <div >
 
     <h3 class="dark:text-white text-lg mb-3 h-10 border-b border-gray-300">Personal Information</h3>
@@ -22,9 +120,10 @@
         type="text"
         id="first"
         name="First"
-        class="w-[100%] p-3 text-lg rounded-lg text-black bg-white border border-transparent focus:outline-none placeholder-gray-600 focus:placeholder-transparent"
+        class="name w-[100%] p-2 text-lg rounded-lg text-black bg-white border border-transparent focus:outline-none placeholder-gray-600 focus:placeholder-transparent"
         placeholder="First Name"
       />
+       <div class="error"></div>
       </div>
 
       <div class="w-[48%] mt-5">
@@ -32,9 +131,10 @@
       type="text"
       id="last"
       name="Last"
-      class="w-[100%] p-3 text-lg rounded-lg text-black bg-white border border-transparent focus:outline-none placeholder-gray-600 focus:placeholder-transparent"
+      class="name w-[100%] p-2 text-lg rounded-lg text-black bg-white border border-transparent focus:outline-none placeholder-gray-600 focus:placeholder-transparent"
       placeholder="Last Name"
       />
+      <div class="error"></div>
       </div>
 
       <div class="w-[48%]">
@@ -42,9 +142,10 @@
       type="text"
       id="phone"
       name="Phone"
-      class="w-[100%] p-3 text-lg rounded-lg text-black bg-white border border-transparent focus:outline-none placeholder-gray-600 focus:placeholder-transparent appearance-none"
+      class="w-[100%] p-2 text-lg rounded-lg text-black bg-white border border-transparent focus:outline-none placeholder-gray-600 focus:placeholder-transparent appearance-none"
       placeholder="Phone Number"
       />
+      <div class="error"></div>
       </div>
 
       <div class="w-[48%]">
@@ -52,9 +153,10 @@
         type="email"
         id="email"
         name="Email"
-        class="w-[100%] p-3 text-lg rounded-lg text-black bg-white border border-transparent focus:outline-none placeholder-gray-600 focus:placeholder-transparent"
+        class="w-[100%] p-2 text-lg rounded-lg text-black bg-white border border-transparent focus:outline-none placeholder-gray-600 focus:placeholder-transparent"
         placeholder="Email Address"
         />
+        <div class="error"></div>
         </div>
     </div>  
 
@@ -66,9 +168,10 @@
         type="text"
         id="province"
         className="Location"
-        class="w-[100%] p-3 text-lg rounded-lg text-black bg-white border border-transparent focus:outline-none placeholder-gray-600 focus:placeholder-transparent"
+        class="w-[100%] p-2 text-lg rounded-lg text-black bg-white border border-transparent focus:outline-none placeholder-gray-600 focus:placeholder-transparent"
         placeholder="Province"
         />
+        <div class="error"></div>
       </div>
 
         <div class="w-[48%]">
@@ -76,17 +179,18 @@
           type="text"
           id="city"
           className="Location"
-          class="w-[100%] p-3 text-lg rounded-lg text-black bg-white border border-transparent focus:outline-none placeholder-gray-600 focus:placeholder-transparent"
+          class="w-[100%] p-2 text-lg rounded-lg text-black bg-white border border-transparent focus:outline-none placeholder-gray-600 focus:placeholder-transparent"
           placeholder="City"
           />
+          <div class="error"></div>
           </div>
 
     </div>
 
-    <h3 class="dark:text-white text-lg h-9">Position Information</h3>
+    <h3  class="dark:text-white text-lg h-9">Position Information</h3>
     <div class="flex flex-wrap justify-between gap-5 mb-7">
       <div class="w-[48%]">
-        <div  class="dropdown w-[100%] p-3 text-lg rounded-lg text-gray-600 bg-white border border-transparent focus:outline-none cursor-default">
+        <div  id="position" class="dropdown w-[100%] p-2 text-lg rounded-lg text-black bg-white border border-transparent focus:outline-none cursor-default">
           Choose a position
         </div>
         <ul class="toggle hidden w-[180px] bg-white rounded-md shadow-md text-md absolute z-10 m-1">
@@ -102,18 +206,12 @@
         </div>
 
         <div class="w-[48%]">
-          <div  class="dropdown w-[100%] p-3 text-lg rounded-lg text-gray-600 bg-white border border-transparent focus:outline-none cursor-default">
+          <div  id="toggleit" class=" w-[100%] p-2 text-lg rounded-lg text-black bg-white border border-transparent focus:outline-none cursor-default">
             Select job type
           </div>
-          <ul  class="toggle hidden w-[180px] bg-white rounded-md shadow-md text-md absolute z-10 m-1">
-            <li class="block w-full bg-transparent p-1 hover:bg-gray-100 cursor-pointer">Product Designer</li>
-            <li class="block w-full bg-transparent p-1 hover:bg-gray-100 cursor-pointer">Digital Marketer</li>
-            <li class="block w-full bg-transparent p-1 hover:bg-gray-100 cursor-pointer">Software Developer</li>
-            <li class="block w-full bg-transparent p-1 hover:bg-gray-100 cursor-pointer">QA Tester</li>
-            <li class="block w-full bg-transparent p-1 hover:bg-gray-100 cursor-pointer">Ui/Ux Designer</li>
-            <li class="block w-full bg-transparent p-1 hover:bg-gray-100 cursor-pointer">Web Developer</li>
-            <li class="block w-full bg-transparent p-1 hover:bg-gray-100 cursor-pointer">Seo Supporter</li>
-            <li class="block w-full bg-transparent p-1 hover:bg-gray-100 cursor-pointer">WordPress Developer</li>
+          <ul id="drop" class=" hidden w-[180px] bg-white rounded-md shadow-md text-md absolute z-10 m-1">
+            <li class="block w-full bg-transparent p-1 hover:bg-gray-100 cursor-pointer">Full Time</li>
+            <li class="block w-full bg-transparent p-1 hover:bg-gray-100 cursor-pointer">Internship</li>
           </ul>
         </div>
 
@@ -126,9 +224,10 @@
         type="text"
         id="academic"
         name="academic"
-        class="w-[100%] p-3 text-lg rounded-lg text-black bg-white border border-transparent focus:outline-none placeholder-gray-600 focus:placeholder-transparent"
+        class="w-[100%] p-2 text-lg rounded-lg text-black bg-white border border-transparent focus:outline-none placeholder-gray-600 focus:placeholder-transparent"
         placeholder="Academic degree"
         />
+        <div class="error"></div>
         </div>
       </div>
 
@@ -138,35 +237,39 @@
       type="text"
       id="portfolio"
       name="Portfolio"
-      class="w-[100%] p-1 text-md rounded-lg text-black bg-white border border-transparent focus:outline-none placeholder-gray-600 focus:placeholder-transparent"
+      class="w-[100%] pt-1 pb-1 pl-2 pr-3text-md rounded-lg text-black bg-white border border-transparent focus:outline-none placeholder-gray-600 focus:placeholder-transparent"
       placeholder="Enter your Portfolio/Website Link"
       />
+      <div class="error"></div>
       </div>
 
 
       </div>
 
       <div class="mt-10">
-          <h3 class="text-xl font-medium mb-2 dark:text-white">Upload CV</h3>
+          <h3  class="text-xl font-medium mb-2 dark:text-white">Upload CV</h3>
           <label class="cursor-pointer inline-block px-4 py-2 rounded-md border border-gray-300 dark:text-white text-sm font-semibold bg-transparent hover:bg-gray-700">
             Choose File
           <input type="file" id="inputfile" class="hidden"/>
           </label>
           <span id="filename" class="dark:text-white">No file choosen</span>
+          <div class="error"></div>
       </div>
 
       <div class="mt-5">
           <textarea
-          class="w-full p-3 h-[150px] text-lg text-black border-none bg-white rounded resize-none overflow-hidden focus:outline-none"
+          id="textarea"
+          class="w-full p-2 h-[100px] text-lg text-black border-none bg-white rounded resize-none overflow-hidden focus:outline-none"
           placeholder="Cover Letter"
           oninput="this.style.height = '150px'; this.style.height = this.scrollHeight + 'px'"
           ></textarea>
+          <div class="error"></div>
       </div>
 
       <div class="flex justify-center mt-7">
           <button 
           type="submit"
-          class="bg-blue-500 text-lg text-white flex justify-center rounded pl-6 pr-6 pt-2 pb-2 mb-5 hover:bg-blue-700"
+          class="bg-indigo-600 text-lg font-semibold text-white flex justify-center rounded pl-6 pr-6 pt-2 pb-2 mb-5 hover:bg-indigo-900"
           >Submit
           </button>
       </div>
