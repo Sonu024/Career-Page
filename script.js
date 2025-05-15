@@ -190,36 +190,38 @@ form.addEventListener("submit", function (e) {
 
 
   //Register
-const loadingBar = document.getElementById('loading-bar');
+// Disable scrolling initially
+document.body.classList.add("loading");
 
-// Select all buttons that should trigger loading bar
-const applyButtons = document.querySelectorAll('.apply-btn');
+window.addEventListener("load", () => {
+  gsap.to("#loader-bar", {
+    width: "100%",
+    duration: 1,
+    ease: "power2.out",
+    onComplete: () => {
+      gsap.to("#loader-bar-container", {
+        opacity: 0,
+        duration: 0.5,
+        onComplete: () => {
+          document.getElementById("loader-bar-container").style.display = "none";
 
-applyButtons.forEach(button => {
-  button.addEventListener('click', function(event) {
-    event.preventDefault(); // prevent immediate navigation
+          // ✅ Re-enable scrolling
+          document.body.classList.remove("loading");
 
-    // Reset loading bar width instantly
-    loadingBar.style.transition = 'none';
-    loadingBar.style.width = '0';
-
-    // Force reflow so transition can restart
-    loadingBar.offsetWidth; 
-
-    // Then animate to full width with transition
-    loadingBar.style.transition = 'width 1s ease';
-    loadingBar.style.width = '100%';
-
-    // After animation, navigate to the button's parent link href
-    // The button is inside an <a>, so find its closest ancestor <a> tag
-    const link = button.closest('a');
-    if (link && link.href) {
-      setTimeout(() => {
-        window.location.href = link.href;
-      }, 1000); // match duration of the transition
+          // ✅ Fade in the main content after loader is hidden
+          gsap.to("#main-content", {
+            opacity: 1,
+            duration: 0.5,
+            ease: "power2.out"
+          });
+        }
+      });
     }
   });
 });
+
+
+
 
 
 

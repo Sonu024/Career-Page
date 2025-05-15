@@ -18,7 +18,17 @@
     opacity: 1;
   }
 
-  
+  @keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.loader {
+  border-top-color: #3490dc; /* Tailwind blue-500 */
+  animation: spin 1s linear infinite;
+}
+
+body.loading {
+  overflow: hidden;
+}
 
 
 </style>
@@ -26,7 +36,14 @@
 
 </head>
  
-<body class="bg-gray-300">
+<body  class="loading bg-gray-300 h-screen overflow-x-hidden">
+
+<!-- Loader Bar -->
+<div id="loader-bar-container" class="fixed top-0 left-0 w-full h-0.5 bg-gray-200 z-50">
+  <div id="loader-bar" class="h-full bg-indigo-600 w-0"></div>
+</div>
+
+ <div id="main-content" class="opacity-80 transition-opacity duration-300 bg-gray-300">
 <header class="relative h-[600px] flex justify-center items-center">
   <div class="absolute inset-0 bg-cover bg-center opacity-80"
        style="background-image: url('https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
@@ -36,13 +53,13 @@
     <h1 class="text-white font-bold text-8xl mb-6">Job Apply</h1>
 
     
-    <div class="bg-gray-300 w-[250px] text-black border-1 border-indigo-600 bg-opacity-40 py-3 rounded-lg flex gap-2 items-center justify-center text-2xl">
+    <div class="bg-gray-300  w-[250px] text-black border-1 border-indigo-600 bg-opacity-40 py-3 rounded-lg flex gap-2 items-center justify-center text-2xl">
     
-      <a href="home.html" class=" hover:text-indigo-600 transition duration-200 flex items-center gap-1 ">
+      <a href="home.html" class=" hover:text-indigo-600 font-semibold transition duration-200 flex items-center gap-1 ">
         Home<span class="text-3xl">←</span>
       </a>
 
-      <div class="flex items-center gap-1 text-indigo-600">
+      <div class="font-semibold flex items-center gap-1 text-indigo-600">
            <span class="text-3xl">→</span>
         Job
       </div>
@@ -320,6 +337,8 @@
       </div>
     </form>
   </div>
+
+  </div> 
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
