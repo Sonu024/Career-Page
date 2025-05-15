@@ -181,7 +181,7 @@ form.addEventListener("submit", function (e) {
         });
       },
       {
-        threshold: 0.6, // 40% of the element visible
+        threshold: 0.6, 
       }
     );
 
@@ -189,8 +189,7 @@ form.addEventListener("submit", function (e) {
   });
 
 
-  //Register
-// Disable scrolling initially
+//Loader line
 document.body.classList.add("loading");
 
 window.addEventListener("load", () => {
@@ -205,10 +204,8 @@ window.addEventListener("load", () => {
         onComplete: () => {
           document.getElementById("loader-bar-container").style.display = "none";
 
-          // ✅ Re-enable scrolling
           document.body.classList.remove("loading");
 
-          // ✅ Fade in the main content after loader is hidden
           gsap.to("#main-content", {
             opacity: 1,
             duration: 0.5,
@@ -219,6 +216,8 @@ window.addEventListener("load", () => {
     }
   });
 });
+
+
 
 
 
