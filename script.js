@@ -167,3 +167,72 @@ form.addEventListener("submit", function (e) {
   }
 });
 
+
+//form animation
+  document.addEventListener("DOMContentLoaded", () => {
+    const target = document.getElementById("applyTitle");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            target.classList.add("slide-in-active");
+          }
+        });
+      },
+      {
+        threshold: 0.6, // 40% of the element visible
+      }
+    );
+
+    observer.observe(target);
+  });
+
+
+  //Register
+const loadingBar = document.getElementById('loading-bar');
+
+// Select all buttons that should trigger loading bar
+const applyButtons = document.querySelectorAll('.apply-btn');
+
+applyButtons.forEach(button => {
+  button.addEventListener('click', function(event) {
+    event.preventDefault(); // prevent immediate navigation
+
+    // Reset loading bar width instantly
+    loadingBar.style.transition = 'none';
+    loadingBar.style.width = '0';
+
+    // Force reflow so transition can restart
+    loadingBar.offsetWidth; 
+
+    // Then animate to full width with transition
+    loadingBar.style.transition = 'width 1s ease';
+    loadingBar.style.width = '100%';
+
+    // After animation, navigate to the button's parent link href
+    // The button is inside an <a>, so find its closest ancestor <a> tag
+    const link = button.closest('a');
+    if (link && link.href) {
+      setTimeout(() => {
+        window.location.href = link.href;
+      }, 1000); // match duration of the transition
+    }
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

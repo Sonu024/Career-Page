@@ -5,33 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form</title>
     <link href="/src/index.css" rel="stylesheet">
+
+    <style>
+  .slide-in {
+    transform: translateX(200px);
+    opacity: 0;
+    transition: transform 1s ease-out, opacity 1s ease-out;
+  }
+
+  .slide-in-active {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  
+
+
+</style>
+
+
 </head>
  
-<body class="bg-gray-400">
+<body class="bg-gray-300">
+<header class="relative h-[600px] flex justify-center items-center">
+  <div class="absolute inset-0 bg-cover bg-center opacity-80"
+       style="background-image: url('https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
+  </div>
 
-  <h1 class="text-4xl font-bold text-center mb-7 mt-10 h-2 ">Apply For This Post</h1>
-  <h2 class="text-xl font-semibold text-center mb-7 mt-10 ">(Empower Your Tech Career)</h2>
+    <div class="relative z-10  text-center flex flex-col items-center">
+    <h1 class="text-white font-bold text-8xl mb-6">Job Apply</h1>
 
-    <div class="ml-15 mr-15 mb-10 flex gap-5">
-      <div class="dark:bg-gray-800 flex-2 rounded text-white pt-5 pb-5 pl-8 pr-8">
-        <h2 class="text-2xl text-center pb-2 border-b border-gray-400">Software Developer</h2>
+    
+    <div class="bg-gray-300 w-[250px] text-black border-1 border-indigo-600 bg-opacity-40 py-3 rounded-lg flex gap-2 items-center justify-center text-2xl">
+    
+      <a href="home.html" class=" hover:text-indigo-600 transition duration-200 flex items-center gap-1 ">
+        Home<span class="text-3xl">←</span>
+      </a>
 
-        <div class="text-gray-300 text-sm flex justify-between">
+      <div class="flex items-center gap-1 text-indigo-600">
+           <span class="text-3xl">→</span>
+        Job
+      </div>
+    </div>
+  </div>
+</header>
+
+ <h1 id="applyTitle" class="text-5xl font-bold text-center mb-7 mt-10 slide-in">
+  <span class="title">Apply For This Post</span>
+</h1>
+
+
+  <h2 class="text-xl font-semibold text-center mb-7 mt-7 ">(Empower Your Tech Career)</h2>
+
+    <div class="box ml-15 mr-15 mb-10 flex gap-5">
+      <div class="bg-white flex-2 rounded text-white pt-5 pb-5 pl-8 pr-8">
+        <h2 class=" text-2xl text-black text-center pb-2 border-b border-gray-400 ">Software Developer</h2>
+
+        <div class="text-gray-700 text-sm flex justify-between">
           <div>Job posted on 07 May, 2025</div>
           <div>Apply before 06 Jun, 2025</div>
         </div>
 
 
         <div class="mt-7 mb-7">
-          <h2 class="text-xl font-semibold mb-2">Job Description:</h2>
-          <p class="text-gray-300">We are looking for a skilled and motivated Software Developer to join our IT team. The ideal candidate will be responsible for
+          <h2 class="text-xl font-semibold mb-2 text-black">Job Description:</h2>
+          <p class="text-gray-800">We are looking for a skilled and motivated Software Developer to join our IT team. The ideal candidate will be responsible for
              building, enhancing, and maintaining software solutions that are scalable, secure, and performance-driven. You will work alongside
               designers, developers, and product managers to deliver high-quality applications that meet business needs and user expectations.</p>
         </div>
 
         <div class="mt-4 mb-7">
-          <h2 class="text-xl font-semibold mb-2">Responsibilities:</h2>
-        <ul class="list-disc text-gray-300 ml-4">
+          <h2 class="text-xl font-semibold mb-2 text-black">Responsibilities:</h2>
+        <ul class="list-disc text-gray-800 ml-4">
           <li class="h-7">Design, develop, test, and deploy software applications and features</li>
           <li class="h-7">Collaborate with cross-functional teams (designers, product managers, QA)</li>
           <li class="h-7">Write clean, efficient, and maintainable code</li>
@@ -44,8 +89,8 @@
         </div>
 
         <div class="mt-4 mb-7">
-          <h2 class="text-xl font-semibold mb-2">Requirements:</h2>
-        <ul class="list-disc text-gray-300 ml-4">
+          <h2 class="text-xl font-semibold mb-2 text-black">Requirements:</h2>
+        <ul class="list-disc text-gray-800 ml-4">
           <li class="h-7">Bachelor’s degree in Computer Science, Information Technology, or a related field</li>
           <li class="h-7">1–4 years of experience in software development</li>
           <li class="h-7">Solid understanding of object-oriented programming and software design patterns</li>
@@ -58,42 +103,42 @@
 
 
         <div  class="mt-4 mb-7">
-          <h2 class="text-xl font-semibold mb-2">Required Skills:</h2>
+          <h2 class="text-xl font-semibold mb-2 text-black">Required Skills:</h2>
           <div class="flex gap-10">
-            <div class="bg-gray-600 p-2 rounded">JavaScript / TypeScript</div>
-            <div class="bg-gray-600 p-2 rounded">Python</div>
-            <div class="bg-gray-600 p-2 rounded">Java</div>
-            <div class="bg-gray-600 p-2 rounded">C# / .NET</div>
+            <div class="bg-gray-300 text-black p-2 rounded">JavaScript / TypeScript</div>
+            <div class="bg-gray-300 text-black p-2 rounded">Python</div>
+            <div class="bg-gray-300 text-black p-2 rounded">Java</div>
+            <div class="bg-gray-300 text-black p-2 rounded">C# / .NET</div>
           </div>
         </div>
       </div >
 
-      <div class=" flex-1 rounded text-white pt-5 pb-5 pl-2 pr-2">
-        <h2 class="text-indigo-600 text-xl font-bold h-5">Overview</h2>
-        <div class="grid grid-cols-[100px_auto] mt-3 p-4 bg-gray-600 rounded  text-md">
-          <div>Category</div>
-          <div  class="h-8"><span class="mr-2">:</span>    Software Developer</div> 
+      <div class=" flex-1 rounded text-black pt-5 pb-5 pl-2 pr-2">
+        <h2 class="text-black text-xl font-bold h-5">Overview</h2>
+        <div class="grid grid-cols-[100px_auto] mt-3 border-1 border-gray-400 rounded  text-md">
+          <div class="bg-gray-400 pl-3"> Category</div>
+          <div  class="h-9 bg-gray-400"><span class="mr-2">:</span>    Software Developer</div> 
 
-          <div>Openings</div>
-          <div  class="h-8"><span class="mr-2">:</span>    1</div> 
+          <div class="pl-3 bg-gray-100">Openings</div>
+          <div  class="h-9 bg-gray-100"><span class="mr-2">:</span>    1</div> 
 
-          <div>Location</div>
-          <div  class="h-8"><span class="mr-2">:</span>   Bharatpur-10, Chitwan</div> 
+          <div class="bg-gray-400 pl-3" >Location</div>
+          <div  class="h-9 bg-gray-400"><span class="mr-2">:</span>   Bharatpur-10, Chitwan</div> 
 
-          <div>Job level</div>
-          <div class="h-8"><span class="mr-2">:</span>   Mid Level</div> 
+          <div class="pl-3 bg-gray-100">Job level</div>
+          <div class="h-9 bg-gray-100"><span class="mr-2">:</span>   Mid Level</div> 
 
-          <div>Education</div>
-          <div class="h-8"><span class="mr-2">:</span>    Bachelors</div> 
+          <div class="bg-gray-400 pl-3">Education</div>
+          <div class="h-9 bg-gray-400"><span class="mr-2">:</span>    Bachelors</div> 
 
-          <div>Salary</div>
-          <div  class="h-8"><span class="mr-2">:</span>   Negotiable</div> 
+          <div class="pl-3 bg-gray-100">Salary</div>
+          <div  class="h-9 bg-gray-100"><span class="mr-2">:</span>   Negotiable</div> 
 
-          <div>Posted Date</div>
-          <div class="h-8"><span class="mr-2">:</span>     07 May, 2025</div> 
+          <div class="bg-gray-400 pl-3">Posted Date</div>
+          <div class="h-9 bg-gray-400"><span class="mr-2">:</span>     07 May, 2025</div> 
 
-          <div>Apply Date</div>
-          <div class="h-8"><span class="mr-2">:</span>    06 Jun, 2025</div> 
+          <div class="pl-3 bg-gray-100">Apply Date</div>
+          <div class="h-9 bg-gray-100"><span class="mr-2">:</span>    06 Jun, 2025</div> 
 
         </div>
       </div>
@@ -108,11 +153,11 @@
 
 
 
-  <div class="dark:bg-gray-800 bg-gray-200 rounded shadow-md pl-7 pr-7 pt-7 ml-80 mr-80 mb-2">
+  <div class="bg-white rounded shadow-md pl-7 pr-7 pt-7 ml-80 mr-80 mb-2">
     <form id="nameForm">
       <div >
 
-    <h3 class="dark:text-white text-lg mb-3 h-10 border-b border-gray-300">Personal Information</h3>
+    <h3 class="text-black text-lg mb-3 h-10 border-b border-gray-300">Personal Information</h3>
     <div class="flex flex-wrap justify-between gap-5 mb-7">
       <div class="w-[48%] mt-5">
       <label for="firstname"></label>
@@ -120,7 +165,7 @@
         type="text"
         id="first"
         name="First"
-        class="name w-[100%] p-2 text-lg rounded-lg text-black bg-white border border-transparent focus:outline-none placeholder-gray-600 focus:placeholder-transparent"
+        class="name w-[100%] p-2 text-lg rounded-lg text-black bg-gray-200 border border-transparent focus:outline-none placeholder-gray-600 focus:placeholder-transparent"
         placeholder="First Name"
       />
        <div class="error"></div>
@@ -131,7 +176,7 @@
       type="text"
       id="last"
       name="Last"
-      class="name w-[100%] p-2 text-lg rounded-lg text-black bg-white border border-transparent focus:outline-none placeholder-gray-600 focus:placeholder-transparent"
+      class="name w-[100%] p-2 text-lg rounded-lg text-black bg-gray-200 border border-transparent focus:outline-none placeholder-gray-600 focus:placeholder-transparent"
       placeholder="Last Name"
       />
       <div class="error"></div>
@@ -142,7 +187,7 @@
       type="text"
       id="phone"
       name="Phone"
-      class="w-[100%] p-2 text-lg rounded-lg text-black bg-white border border-transparent focus:outline-none placeholder-gray-600 focus:placeholder-transparent appearance-none"
+      class="w-[100%] p-2 text-lg rounded-lg text-black bg-gray-200 border border-transparent focus:outline-none placeholder-gray-600 focus:placeholder-transparent appearance-none"
       placeholder="Phone Number"
       />
       <div class="error"></div>
@@ -153,7 +198,7 @@
         type="email"
         id="email"
         name="Email"
-        class="w-[100%] p-2 text-lg rounded-lg text-black bg-white border border-transparent focus:outline-none placeholder-gray-600 focus:placeholder-transparent"
+        class="w-[100%] p-2 text-lg rounded-lg text-black bg-gray-200 border border-transparent focus:outline-none placeholder-gray-600 focus:placeholder-transparent"
         placeholder="Email Address"
         />
         <div class="error"></div>
@@ -161,14 +206,14 @@
     </div>  
 
 
-    <h3 class="dark:text-white text-lg h-9">Address</h3>
+    <h3 class="text-black text-lg h-9">Address</h3>
     <div class="flex flex-wrap justify-between gap-5 mb-7">
       <div class="w-[48%]">
         <input
         type="text"
         id="province"
         className="Location"
-        class="w-[100%] p-2 text-lg rounded-lg text-black bg-white border border-transparent focus:outline-none placeholder-gray-600 focus:placeholder-transparent"
+        class="w-[100%] p-2 text-lg rounded-lg text-black bg-gray-200 border border-transparent focus:outline-none placeholder-gray-600 focus:placeholder-transparent"
         placeholder="Province"
         />
         <div class="error"></div>
@@ -179,7 +224,7 @@
           type="text"
           id="city"
           className="Location"
-          class="w-[100%] p-2 text-lg rounded-lg text-black bg-white border border-transparent focus:outline-none placeholder-gray-600 focus:placeholder-transparent"
+          class="w-[100%] p-2 text-lg rounded-lg text-black bg-gray-200 border border-transparent focus:outline-none placeholder-gray-600 focus:placeholder-transparent"
           placeholder="City"
           />
           <div class="error"></div>
@@ -187,10 +232,10 @@
 
     </div>
 
-    <h3  class="dark:text-white text-lg h-9">Position Information</h3>
+    <h3  class="text-black text-lg h-9">Position Information</h3>
     <div class="flex flex-wrap justify-between gap-5 mb-7">
       <div class="w-[48%]">
-        <div  id="position" class="dropdown w-[100%] p-2 text-lg rounded-lg text-black bg-white border border-transparent focus:outline-none cursor-default">
+        <div  id="position" class="dropdown w-[100%] p-2 text-lg rounded-lg text-black bg-gray-200 border border-transparent focus:outline-none cursor-default">
           Choose a position
         </div>
         <ul class="toggle hidden w-[180px] bg-white rounded-md shadow-md text-md absolute z-10 m-1">
@@ -206,7 +251,7 @@
         </div>
 
         <div class="w-[48%]">
-          <div  id="toggleit" class=" w-[100%] p-2 text-lg rounded-lg text-black bg-white border border-transparent focus:outline-none cursor-default">
+          <div  id="toggleit" class=" w-[100%] p-2 text-lg rounded-lg text-black bg-gray-200 border border-transparent focus:outline-none cursor-default">
             Select job type
           </div>
           <ul id="drop" class=" hidden w-[180px] bg-white rounded-md shadow-md text-md absolute z-10 m-1">
@@ -217,27 +262,27 @@
 
       </div>
 
-      <h3 class="dark:text-white text-lg h-9">Qualification</h3>
+      <h3 class="text-black text-lg h-9">Qualification</h3>
       <div>
       <div class="w-[48%] mb-5">
         <input
         type="text"
         id="academic"
         name="academic"
-        class="w-[100%] p-2 text-lg rounded-lg text-black bg-white border border-transparent focus:outline-none placeholder-gray-600 focus:placeholder-transparent"
+        class="w-[100%] p-2 text-lg rounded-lg text-black bg-gray-200 border border-transparent focus:outline-none placeholder-gray-600 focus:placeholder-transparent"
         placeholder="Academic degree"
         />
         <div class="error"></div>
         </div>
       </div>
 
-      <h3 class="dark:text-white text-lg h-9">Portfolio link</h3>
+      <h3 class="text-black text-lg h-9">Portfolio link</h3>
       <div class="w-[100%]">
       <input
       type="text"
       id="portfolio"
       name="Portfolio"
-      class="w-[100%] pt-1 pb-1 pl-2 pr-3text-md rounded-lg text-black bg-white border border-transparent focus:outline-none placeholder-gray-600 focus:placeholder-transparent"
+      class="w-[100%] pt-1 pb-1 pl-2 pr-3text-md rounded-lg text-black bg-gray-200 border border-transparent focus:outline-none placeholder-gray-600 focus:placeholder-transparent"
       placeholder="Enter your Portfolio/Website Link"
       />
       <div class="error"></div>
@@ -247,19 +292,19 @@
       </div>
 
       <div class="mt-10">
-          <h3  class="text-xl font-medium mb-2 dark:text-white">Upload CV</h3>
-          <label class="cursor-pointer inline-block px-4 py-2 rounded-md border border-gray-300 dark:text-white text-sm font-semibold bg-transparent hover:bg-gray-700">
+          <h3  class="text-xl font-medium mb-2 text-black">Upload CV</h3>
+          <label class="cursor-pointer inline-block px-4 py-2 rounded-md border border-gray-300 text-black text-sm font-semibold bg-transparent hover:bg-gray-200">
             Choose File
           <input type="file" id="inputfile" class="hidden"/>
           </label>
-          <span id="filename" class="dark:text-white">No file choosen</span>
+          <span id="filename" class="text-black">No file choosen</span>
           <div class="error"></div>
       </div>
 
       <div class="mt-5">
           <textarea
           id="textarea"
-          class="w-full p-2 h-[100px] text-lg text-black border-none bg-white rounded resize-none overflow-hidden focus:outline-none"
+          class="w-full p-2 h-[100px] text-lg text-black border-none bg-gray-200 rounded resize-none overflow-hidden focus:outline-none"
           placeholder="Cover Letter"
           oninput="this.style.height = '150px'; this.style.height = this.scrollHeight + 'px'"
           ></textarea>
@@ -275,6 +320,11 @@
       </div>
     </form>
   </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
 
   <script src="script.js"></script>
 

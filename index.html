@@ -5,34 +5,89 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Career</title>
+
       <link href="/src/index.css" rel="stylesheet">
+
+<style>
+  .slide-in-title {
+    animation: slideIn 1s ease-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes slideIn {
+    0% {
+      transform: translateX(200px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+   @keyframes appear{
+    from{
+      opacity: 0;
+      scale: 0.5;
+    }
+        to{
+      opacity: 1;
+      scale: 1;
+    }
+   }
+    .group{
+      animation: appear linear;
+      animation-timeline: view();
+      animation-range: entry 0%;
+    }
+
+
+
+</style>
+
 
   </head>
   <body>
-   
-    <div class="dark:bg-gradient-to-r from-[#0f6670] to-[#0a3643] bg-gray-200 ">
-      
-      <h1 class="text-4xl font-bold flex justify-center p-15 dark:text-white">Explore Opportunities</h1>
-    
-      <div class="flex flex-wrap justify-center gap-10 ml-5 mr-5 pb-5">
+   <div id="loading-bar" style="
+  position: fixed;
+  top: 0; left: 0;
+  height: 4px;
+  background-color: red;
+  width: 0;
+  z-index: 9999;
+  transition: width 1s ease;
+"></div>
 
-        <div class="career-sec h-120 w-90 border-transparent rounded-xl bg-white dark:bg-gray-800 shadow hover:shadow-2xl hover:shadow-gray-800 transition-all duration-300  ">
+
+    <div class="bg bg-gray-300 ">
+
+      <h1 class="text-5xl  font-bold flex justify-center p-15"><span class="slide-in-title">Explore Opportunities</span></h1>
+    
+      <div class=" flex flex-wrap justify-center gap-10 ml-5 mr-5 pb-5">
+
+        <div class="group career-sec h-120 w-90 border-transparent rounded-xl bg-white hover:bg-indigo-100  shadow hover:shadow-2xl hover:scale-105  transition-transform duration-300  hover:shadow-gray-800  ">
           <div class="mt-5 ml-5 mr-5 mb-0 flex justify-between">
             <img src="https://www.digitalyeti.com.np/images/logo.png" class="h-20 w-20">
             <h3 class="text-md text-indigo-600 border-1 border-indigo-600 h-9 w-20 rounded-3xl flex justify-center items-center mt-4">Full Time</h3>
           </div>
     
           <div class="pr-7 pl-7">
-            <h2 class="text-2xl font-bold mb-3  dark:text-white">Software Developer</h2>
+            <h2 class=" text-2xl font-bold mb-3 ">Software Developer</h2>
             <div class=" border-b border-gray-400 mb-5">
-            <span class="flex justify-end text-xl dark:text-gray-300 mt-2 mb-5"><i class="fa-solid fa-calendar-days mr-2 mt-1"></i>05 May 2025</span>
+            <span class="flex justify-end text-xl dark:text-gray-600 mt-2 mb-5 group-hover:text-gray-950"><i class="fa-solid fa-calendar-days mr-2 mt-1"></i>05 May 2025</span>
             </div>
     
             <div class="flex flex-col justify-between h-60">
-              <span class="text-xl dark:text-gray-300">Build scalable, efficient, and maintainable software solutions through clean code, problem-solving, and continuous improvement.</span>
+              <span class="text-xl dark:text-gray-600 group-hover:text-gray-950">Build scalable, efficient, and maintainable software solutions through clean code, problem-solving, and continuous improvement.</span>
               
               <div class="button flex justify-between">
-              <a href="/form.html"><button class="text-lg font-semibold h-12 w-40 rounded-3xl bg-indigo-600  text-white hover:bg-indigo-900 hover:text-white">APPLY NOW</button></a>
+<a href="/form.html"  id="apply">
+  <button class="apply-btn text-lg font-semibold h-12 w-40 rounded-3xl bg-indigo-600 text-white hover:bg-indigo-900 hover:text-white">
+    APPLY NOW
+  </button>
+</a>
+
+
               <h2 class="text-lg dark:text-white font-semibold mt-3"></h2>
               </div>
             </div>
@@ -40,20 +95,20 @@
     
         </div>
 
-      <div class="career-sec h-120 w-90 border-transparent rounded-xl bg-white dark:bg-gray-800 shadow hover:shadow-2xl hover:shadow-gray-800 transition-all duration-300 ">
+      <div class="group career-sec h-120 w-90 border-transparent rounded-xl bg-white  hover:bg-indigo-100  shadow hover:shadow-2xl hover:scale-105  transition-transform duration-300  hover:shadow-gray-800 ">
        <div class="mt-5 ml-5 mr-5 mb-0 flex justify-between">
          <img src="https://www.digitalyeti.com.np/images/logo.png" class="h-20 w-20">
          <h3 class="text-md text-indigo-600 border-1 border-indigo-600 h-9 w-20 rounded-3xl flex justify-center items-center mt-4">Full Time</h3>
        </div>
 
        <div class="pr-7 pl-7">
-         <h2 class="text-2xl font-bold mb-3  dark:text-white">Digital Marketer</h2>
+         <h2 class="text-2xl font-bold mb-3  ">Digital Marketer</h2>
          <div class=" border-b border-gray-400 mb-5">
-         <span class="flex justify-end text-xl dark:text-gray-300 mt-2 mb-5"><i class="fa-solid fa-calendar-days mr-2 mt-1"></i>05 May 2025</span>
+         <span class="flex justify-end text-xl dark:text-gray-600 mt-2 mb-5 group-hover:text-gray-950"><i class="fa-solid fa-calendar-days mr-2 mt-1"></i>05 May 2025</span>
          </div>
 
          <div class="flex flex-col justify-between h-60">
-           <span class="text-xl dark:text-gray-300">Drive brand visibility through data-driven campaigns, SEO, content, and analytics to generate leads and build online presence</span>
+           <span class="text-xl dark:text-gray-600 group-hover:text-gray-950">Drive brand visibility through data-driven campaigns, SEO, content, and analytics to generate leads and build online presence</span>
            
            <div class="button flex justify-between">
            <a href="/form.html"><button class="text-lg font-semibold h-12 w-40 rounded-3xl bg-indigo-600  text-white hover:bg-indigo-900 hover:text-white">APPLY NOW</button></a>
@@ -66,20 +121,20 @@
 
 
 
-     <div class="career-sec h-120 w-90 border-transparent rounded-xl bg-white dark:bg-gray-800  shadow hover:shadow-2xl hover:shadow-gray-800 transition-all duration-300  ">
+     <div class="group career-sec h-120 w-90 border-transparent rounded-xl bg-white hover:bg-indigo-100 shadow hover:shadow-2xl hover:scale-105  transition-transform duration-300  hover:shadow-gray-800   ">
       <div class="mt-5 ml-5 mr-5 mb-0 flex justify-between">
         <img src="https://www.digitalyeti.com.np/images/logo.png" class="h-20 w-20">
         <h3 class="text-md text-indigo-600 border-1 border-indigo-600 h-9 w-20 rounded-3xl flex justify-center items-center mt-4">Full Time</h3>
       </div>
 
       <div class="pr-7 pl-7">
-        <h2 class="text-2xl font-bold mb-3  dark:text-white">Product Designer</h2>
+        <h2 class="text-2xl font-bold mb-3  ">Product Designer</h2>
         <div class=" border-b border-gray-400 mb-5">
-        <span class="flex justify-end text-xl dark:text-gray-300 mt-2 mb-5"><i class="fa-solid fa-calendar-days mr-2 mt-1"></i>05 May 2025</span>
+        <span class="flex justify-end text-xl dark:text-gray-600 mt-2 mb-5 group-hover:text-gray-950"><i class="fa-solid fa-calendar-days mr-2 mt-1"></i>05 May 2025</span>
         </div>
 
         <div class="flex flex-col justify-between h-60">
-          <span class="text-xl dark:text-gray-300">Design impactful digital experiences by blending user needs with business strategy, ensuring intuitive and visually compelling interfaces.
+          <span class="text-xl dark:text-gray-600 group-hover:text-gray-950">Design impactful digital experiences by blending user needs with business strategy, ensuring intuitive and visually compelling interfaces.
 
           </span>
           
@@ -97,20 +152,20 @@
 
 
 
-      <div class="career-sec h-120 w-90 border-transparent rounded-xl bg-white dark:bg-gray-800 shadow hover:shadow-2xl hover:shadow-gray-800 transition-all duration-300 ">
+      <div class="group career-sec h-120 w-90 border-transparent rounded-xl bg-white hover:bg-indigo-100  shadow hover:shadow-2xl hover:scale-105  transition-transform duration-300  hover:shadow-gray-800 ">
        <div class="mt-5 ml-5 mr-5 mb-0 flex justify-between">
          <img src="https://www.digitalyeti.com.np/images/logo.png" class="h-20 w-20">
          <h3 class="text-md text-indigo-600 border-1 border-indigo-600 h-9 w-20 rounded-3xl flex justify-center items-center mt-4">Full Time</h3>
        </div>
 
        <div class="pr-7 pl-7">
-         <h2 class="text-2xl font-bold mb-3  dark:text-white">QA Tester</h2>
+         <h2 class="text-2xl font-bold mb-3  ">QA Tester</h2>
          <div class=" border-b border-gray-400 mb-5">
-         <span class="flex justify-end text-xl dark:text-gray-300 mt-2 mb-5"><i class="fa-solid fa-calendar-days mr-2 mt-1"></i>05 May 2025</span>
+         <span class="flex justify-end text-xl dark:text-gray-600 mt-2 mb-5 group-hover:text-gray-950"><i class="fa-solid fa-calendar-days mr-2 mt-1"></i>05 May 2025</span>
          </div>
 
          <div class="flex flex-col justify-between h-60">
-           <span class="text-xl dark:text-gray-300">Ensure product quality by designing test cases, identifying bugs, and validating features for optimal performance and reliability.</span>
+           <span class="text-xl dark:text-gray-600 group-hover:text-gray-950">Ensure product quality by designing test cases, identifying bugs, and validating features for optimal performance and reliability.</span>
            
            <div class="button flex justify-between">
            <a href="/form.html"><button class="text-lg font-semibold h-12 w-40 rounded-3xl bg-indigo-600  text-white hover:bg-indigo-900 hover:text-white">APPLY NOW</button></a>
@@ -122,20 +177,20 @@
      </div>
 
 
-      <div class="career-sec h-120 w-90 border-transparent rounded-xl bg-white dark:bg-gray-800 shadow hover:shadow-2xl hover:shadow-gray-800 transition-all duration-300  ">
+      <div class="group career-sec h-120 w-90 border-transparent rounded-xl bg-white hover:bg-indigo-100 shadow hover:shadow-2xl hover:scale-105  transition-transform duration-300  hover:shadow-gray-800 ">
        <div class="mt-5 ml-5 mr-5 mb-0 flex justify-between">
          <img src="https://www.digitalyeti.com.np/images/logo.png" class="h-20 w-20">
          <h3 class="text-md text-indigo-600 border-1 border-indigo-600 h-9 w-20 rounded-3xl flex justify-center items-center mt-4">Full Time</h3>
        </div>
 
        <div class="pr-7 pl-7">
-         <h2 class="text-2xl font-bold mb-3  dark:text-white">Ui/Ux Designer</h2>
+         <h2 class="text-2xl font-bold mb-3  ">Ui/Ux Designer</h2>
          <div class=" border-b border-gray-400 mb-5">
-         <span class="flex justify-end text-xl dark:text-gray-300 mt-2 mb-5"><i class="fa-solid fa-calendar-days mr-2 mt-1"></i>05 May 2025</span>
+         <span class="flex justify-end text-xl dark:text-gray-600 mt-2 mb-5 group-hover:text-gray-950"><i class="fa-solid fa-calendar-days mr-2 mt-1"></i>05 May 2025</span>
          </div>
 
          <div class="flex flex-col justify-between h-60">
-           <span class="text-xl dark:text-gray-300">Shape seamless user journeys with engaging visuals and thoughtful interactions, enhancing usability and satisfaction.</span>
+           <span class="text-xl dark:text-gray-600 group-hover:text-gray-950">Shape seamless user journeys with engaging visuals and thoughtful interactions, enhancing usability and satisfaction.</span>
            
            <div class="button flex justify-between">
            <a href="/form.html"><button class="text-lg font-semibold h-12 w-40 rounded-3xl bg-indigo-600  text-white hover:bg-indigo-900 hover:text-white">APPLY NOW</button></a>
@@ -148,20 +203,20 @@
 
 
 
-      <div class="career-sec h-120 w-90 border-transparent rounded-xl bg-white dark:bg-gray-800 shadow hover:shadow-2xl hover:shadow-gray-800 transition-all duration-300  ">
+      <div class="group career-sec h-120 w-90 border-transparent rounded-xl bg-white hover:bg-indigo-100  shadow hover:shadow-2xl hover:scale-105  transition-transform duration-300  hover:shadow-gray-800  ">
        <div class="mt-5 ml-5 mr-5 mb-0 flex justify-between">
          <img src="https://www.digitalyeti.com.np/images/logo.png" class="h-20 w-20">
          <h3 class="text-md text-indigo-600 border-1 border-indigo-600 h-9 w-20 rounded-3xl flex justify-center items-center mt-4">Full Time</h3>
        </div>
 
        <div class="pr-7 pl-7">
-         <h2 class="text-2xl font-bold mb-3  dark:text-white">Web Developer</h2>
+         <h2 class="text-2xl font-bold mb-3  ">Web Developer</h2>
          <div class=" border-b border-gray-400 mb-5">
-         <span class="flex justify-end text-xl dark:text-gray-300 mt-2 mb-5"><i class="fa-solid fa-calendar-days mr-2 mt-1"></i>05 May 2025</span>
+         <span class="flex justify-end text-xl dark:text-gray-600 mt-2 mb-5 group-hover:text-gray-950"><i class="fa-solid fa-calendar-days mr-2 mt-1"></i>05 May 2025</span>
          </div>
 
          <div class="flex flex-col justify-between h-60">
-           <span class="text-xl dark:text-gray-300">Develop responsive, high-performing websites using modern technologies to deliver seamless user experiences across all devices.</span>
+           <span class="text-xl dark:text-gray-600 group-hover:text-gray-950">Develop responsive, high-performing websites using modern technologies to deliver seamless user experiences across all devices.</span>
            
            <div class="button flex justify-between">
            <a href="/form.html"><button class="text-lg font-semibold h-12 w-40 rounded-3xl bg-indigo-600  text-white hover:bg-indigo-900 hover:text-white">APPLY NOW</button></a>
@@ -173,20 +228,20 @@
      </div>
 
 
-      <div class="career-sec h-120 w-90 border-transparent rounded-xl bg-white dark:bg-gray-800 shadow hover:shadow-2xl hover:shadow-gray-800 transition-all duration-300  ">
+      <div class="group career-sec h-120 w-90 border-transparent rounded-xl bg-white hover:bg-indigo-100 shadow hover:shadow-2xl hover:scale-105  transition-transform duration-300  hover:shadow-gray-800  ">
        <div class="mt-5 ml-5 mr-5 mb-0 flex justify-between">
          <img src="https://www.digitalyeti.com.np/images/logo.png" class="h-20 w-20">
          <h3 class="text-md text-indigo-600 border-1 border-indigo-600 h-9 w-20 rounded-3xl flex justify-center items-center mt-4">Full Time</h3>
        </div>
 
        <div class="pr-7 pl-7">
-         <h2 class="text-2xl font-bold mb-3  dark:text-white">Seo Supporter</h2>
+         <h2 class="text-2xl font-bold mb-3  ">Seo Supporter</h2>
          <div class=" border-b border-gray-400 mb-5">
-         <span class="flex justify-end text-xl dark:text-gray-300 mt-2 mb-5"><i class="fa-solid fa-calendar-days mr-2 mt-1"></i>05 May 2025</span>
+         <span class="flex justify-end text-xl dark:text-gray-600 mt-2 mb-5 group-hover:text-gray-950"><i class="fa-solid fa-calendar-days mr-2 mt-1"></i>05 May 2025</span>
          </div>
 
          <div class="flex flex-col justify-between h-60">
-           <span class="text-xl dark:text-gray-300">Optimize website content and structure to improve search engine rankings, drive traffic, and support digital marketing efforts.</span>
+           <span class="text-xl dark:text-gray-600 group-hover:text-gray-950">Optimize website content and structure to improve search engine rankings, drive traffic, and support digital marketing efforts.</span>
            
            <div class="button flex justify-between">
            <a href="/form.html"><button class="text-lg font-semibold h-12 w-40 rounded-3xl bg-indigo-600  text-white hover:bg-indigo-900 hover:text-white">APPLY NOW</button></a>
@@ -199,20 +254,20 @@
 
   
 
-      <div class="career-sec h-120 w-90 border-transparent rounded-xl bg-white dark:bg-gray-800 shadow hover:shadow-2xl hover:shadow-gray-800 transition-all duration-300  ">
+      <div class="group career-sec h-120 w-90 border-transparent rounded-xl bg-white hover:bg-indigo-100 shadow hover:shadow-2xl hover:scale-105  transition-transform duration-300  hover:shadow-gray-800 ">
        <div class="mt-5 ml-5 mr-5 mb-0 flex justify-between">
          <img src="https://www.digitalyeti.com.np/images/logo.png" class="h-20 w-20">
          <h3 class="text-md text-indigo-600 border-1 border-indigo-600 h-9 w-20 rounded-3xl flex justify-center items-center mt-4">Full Time</h3>
        </div>
 
        <div class="pr-7 pl-7">
-         <h2 class="text-2xl font-bold mb-3  dark:text-white">WordPress Developer</h2>
+         <h2 class="text-2xl font-bold mb-3  ">WordPress Developer</h2>
          <div class=" border-b border-gray-400 mb-5">
-         <span class="flex justify-end text-xl dark:text-gray-300 mt-2 mb-5"><i class="fa-solid fa-calendar-days mr-2 mt-1"></i>05 May 2025</span>
+         <span class="flex justify-end text-xl dark:text-gray-600 mt-2 mb-5 group-hover:text-gray-950"><i class="fa-solid fa-calendar-days mr-2 mt-1"></i>05 May 2025</span>
          </div>
 
          <div class="flex flex-col justify-between h-60">
-           <span class="text-xl dark:text-gray-300">Build dynamic, user-friendly websites using WordPress, integrating custom themes and plugins to meet client-specific needs.</span>
+           <span class="text-xl dark:text-gray-600 group-hover:text-gray-950">Build dynamic, user-friendly websites using WordPress, integrating custom themes and plugins to meet client-specific needs.</span>
            
            <div class="button flex justify-between">
            <a href="/form.html"><button class="text-lg font-semibold h-12 w-40 rounded-3xl bg-indigo-600  text-white hover:bg-indigo-900 hover:text-white">APPLY NOW</button></a>
@@ -223,11 +278,18 @@
 
      </div>
      </div>
+      </div>
 
       </div>
-  </div>
+  
 
-  <script src="script.js"></script>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
     <script type="module" src="/src/main.jsx"></script>
+      <script src="script.js"></script>
   </body>
 </html>
