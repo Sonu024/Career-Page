@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel - Job Listings</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class=" font-sans">
+  <div>
+    <h1 class="text-3xl font-bold mt-6 mb-6 text-center">Manage Job Listings</h1>
+
+    <!-- Job Form -->
+    <div class="bg-gray-200 pt-6 pb-6 pl-10 pr-10 rounded shadow mx-[17%] mb-10">
+      <h2 class="text-2xl font-semibold text-center mb-4 border-b  border-black">Details of job</h2>
+      <form id="jobForm" class="grid grid-cols-1 gap-4">
+    
+        <input name="title" placeholder="Job Title" required class="border rounded p-2 focus:outline-none" />
+
+        <div class="flex flex-wrap justify-between">
+           <input name="postedon" placeholder="Job Posted on(05 May 2025)" required class="w-[48%] border rounded p-2 focus:outline-none" />
+
+          <input name="applybefore" placeholder="Job Apply before(05 May 2025)" required class="w-[48%] border rounded p-2 focus:outline-none" />
+        </div>
+
+            <textarea name="description" placeholder="Job Description" required class="border rounded p-2 focus:outline-none  resize-none overflow-hidden" oninput="this.style.height = '100px'; this.style.height = this.scrollHeight + 'px'"></textarea>
+
+            <textarea name="responsibilities" placeholder="Responsibilities" required class="border rounded p-2 focus:outline-none  resize-none overflow-hidden" oninput="this.style.height = '100px'; this.style.height = this.scrollHeight + 'px'"></textarea>
+
+            <textarea name="requirements" placeholder="Requirements" required class="border rounded p-2 focus:outline-none  resize-none overflow-hidden"    oninput="this.style.height = '100px'; this.style.height = this.scrollHeight + 'px'"></textarea>
+
+            <input name="skills" placeholder="Required Skills" required class="border rounded p-2 focus:outline-none" />
+            
+            
+            <div class="flex flex-wrap justify-between gap-4">
+             <input name="opening" placeholder="Opening" required class="w-[48%] border rounded p-2 focus:outline-none" />
+
+          <div class="relative bg-white w-[48%] border rounded p-2 focus:outline-none cursor-default">
+          <div  id="toggleit">
+            Job Level
+          </div>
+          <ul id="drop" class=" hidden w-[180px] bg-white rounded-md shadow-md text-md absolute z-10 mt-3">
+            <li class="block w-full bg-transparent pl-2 hover:bg-gray-200 cursor-pointer">Entry Level</li>
+            <li class="block w-full bg-transparent pl-2 hover:bg-gray-200 cursor-pointer">Mid Level</li>
+              <li class="block w-full bg-transparent pl-2 hover:bg-gray-200 cursor-pointer">Senior Level</li>
+          </ul>
+          </div>
+
+            <input name="education" placeholder="Education " required class="w-[48%] border rounded p-2 focus:outline-none" />
+
+            <input name="salary" placeholder="Salary" required class="w-[48%] border rounded p-2 focus:outline-none" />
+          </div>
+     
+          <div class="flex justify-center my-2">
+          <button type="submit" class="bg-indigo-600 h-12 w-[25%] text-white text-2xl rounded hover:bg-indigo-900">Update Job</button>
+          </div>
+      </form>
+    </div>
+
+    <!-- Job Listings Table -->
+  <div class="m-5 bg-gray-100 p-3 shadow">
+    <h2 class="text-2xl font-bold text-center m-3">Job Listings</h2>
+    <div>
+        <table class="w-full table-auto  border border-gray-100" id="jobsTable ">
+        <thead>
+          <tr class="bg-gray-300">
+            <th class="border px-4 py-2">Title</th>
+            <th class="border px-4 py-2">Posted on</th>
+            <th class="border px-4 py-2">Apply before</th>
+            <th class="border px-4 py-2">Job Level</th>
+            <th class="border px-4 py-2">Education</th>
+            <th class="border px-4 py-2">Salary</th>
+            <th class="border px-4 py-2">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="jobList"></tbody>
+      </table>
+  </div>
+  </div>
+
+ <script src="adminscript.js"></script>
+</body>
+</html>
