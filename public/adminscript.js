@@ -1,113 +1,157 @@
 const toggleit = document.getElementById("toggleit");
 const drop = document.getElementById("drop");
+const dropdownContainer = document.getElementById("dropdownContainer");
+const form = document.getElementById("jobForm");
+const jobList = document.getElementById("jobList");
+const modal = document.getElementById("modal");
+const editForm = document.getElementById("editForm");
+const closeModal = document.getElementById("closeModal");
 
-toggleit.addEventListener("click", () => {
-  drop.classList.toggle("hidden");
-});
+const modalToggleLevel = document.getElementById("modalToggleLevel");
+const modalDropList = document.getElementById("modalDropList");
+const modalDropdownContainer = document.getElementById("modalDropdownContainer");
 
+const confirmModal = document.getElementById("confirmModal");
+const confirmMessage = document.getElementById("confirmMessage");
+const confirmYes = document.getElementById("confirmYes");
+const confirmNo = document.getElementById("confirmNo");
+
+let jobs = JSON.parse(localStorage.getItem("jobs")) || [];
+let currentEditIndex = null;
+let deleteIndex = null;
+
+// Dropdown for main form
+toggleit.addEventListener("click", () => drop.classList.toggle("hidden"));
 drop.querySelectorAll("li").forEach(item => {
   item.addEventListener("click", () => {
     toggleit.textContent = item.textContent;
     drop.classList.add("hidden");
   });
 });
-
 document.addEventListener("click", e => {
-  if (!toggleit.contains(e.target) && !drop.contains(e.target)) {
-    drop.classList.add("hidden");
-  }
+  if (!dropdownContainer.contains(e.target)) drop.classList.add("hidden");
 });
 
-const form = document.getElementById("jobForm");
-const jobList = document.getElementById("jobList");
+// Dropdown for modal
+modalToggleLevel.addEventListener("click", () => modalDropList.classList.toggle("hidden"));
+modalDropList.querySelectorAll("li").forEach(item => {
+  item.addEventListener("click", () => {
+    modalToggleLevel.textContent = item.textContent;
+    modalDropList.classList.add("hidden");
+  });
+});
+document.addEventListener("click", e => {
+  if (!modalDropdownContainer.contains(e.target)) modalDropList.classList.add("hidden");
+});
 
-let editMode = false;
-let rowBeingEdited = null;
-let jobs = JSON.parse(localStorage.getItem("jobs")) || [];
-
-function saveJobsToStorage() {
-  localStorage.setItem("jobs", JSON.stringify(jobs));
-}
-
-function renderJobs() {
+// Load jobs to table
+function loadJobs() {
   jobList.innerHTML = "";
   jobs.forEach((job, index) => {
-    const newRow = document.createElement("tr");
-    newRow.innerHTML = `
+    const row = document.createElement("tr");
+    row.innerHTML = `
       <td class="border px-4 py-2">${job.title}</td>
       <td class="border px-4 py-2">${job.postedon}</td>
       <td class="border px-4 py-2">${job.applybefore}</td>
       <td class="border px-4 py-2">${job.level}</td>
+      <td class="border px-4 py-2">${job.opening}</td>
       <td class="border px-4 py-2">${job.education}</td>
       <td class="border px-4 py-2">${job.salary}</td>
-      <td class="border px-8 py-2 text-center flex flex-col gap-3">
-        <button class="h-10 w-25 text-white text-xl bg-indigo-600 hover:bg-indigo-900 edit-btn rounded" data-index="${index}">Edit</button>
-        <button class="h-10 w-25 text-white text-xl bg-red-600 hover:bg-red-900 delete-btn rounded" data-index="${index}">Delete</button>
+      <td class="border px-4 py-2 text-center">
+        <div class="flex">
+          <button class="edit-btn bg-indigo-600 text-white rounded px-2 py-1 mr-2 hover:bg-indigo-900" data-index="${index}">Edit</button>
+          <button class="delete-btn bg-red-600 text-white rounded px-2 py-1 hover:bg-red-900" data-index="${index}">Delete</button>
+        </div>
       </td>
     `;
-    jobList.appendChild(newRow);
+    jobList.appendChild(row);
   });
 }
+loadJobs();
 
+// Add job
 form.addEventListener("submit", e => {
   e.preventDefault();
-
   const job = {
-    title: form.elements["title"].value,
-    postedon: form.elements["postedon"].value,
-    applybefore: form.elements["applybefore"].value,
-    level: document.getElementById("toggleit").textContent.trim(),
-    education: form.elements["education"].value,
-    salary: form.elements["salary"].value,
+    title: form.title.value,
+    postedon: form.postedon.value,
+    applybefore: form.applybefore.value,
+    level: toggleit.textContent.trim(),
+    opening: form.opening.value,
+    education: form.education.value,
+    salary: form.salary.value,
   };
-
-  if (editMode && rowBeingEdited !== null) {
-    jobs[rowBeingEdited] = job;
-    editMode = false;
-    rowBeingEdited = null;
-    form.querySelector('button[type="submit"]').textContent = "Add Job";
-  } else {
-    jobs.push(job);
-  }
-
-  saveJobsToStorage();
-  renderJobs();
-
+  jobs.push(job);
+  localStorage.setItem("jobs", JSON.stringify(jobs));
   form.reset();
-  document.getElementById("toggleit").textContent = "Job Level";
+  toggleit.textContent = "Job Level";
+  loadJobs();
 });
 
-jobList.addEventListener("click", (e) => {
+// Edit or delete buttons
+jobList.addEventListener("click", e => {
   const index = e.target.dataset.index;
-  const job = jobs[index];
 
   if (e.target.classList.contains("edit-btn")) {
-    form.elements["title"].value = job.title;
-    form.elements["postedon"].value = job.postedon;
-    form.elements["applybefore"].value = job.applybefore;
-    document.getElementById("toggleit").textContent = job.level;
-    form.elements["education"].value = job.education;
-    form.elements["salary"].value = job.salary;
-
-    editMode = true;
-    rowBeingEdited = index;
-    form.querySelector('button[type="submit"]').textContent = "Update Job";
+    currentEditIndex = index;
+    const job = jobs[index];
+    editForm.title.value = job.title;
+    editForm.postedon.value = job.postedon;
+    editForm.applybefore.value = job.applybefore;
+    modalToggleLevel.textContent = job.level;
+    editForm.opening.value = job.opening;
+    editForm.education.value = job.education;
+    editForm.salary.value = job.salary;
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
   }
 
   if (e.target.classList.contains("delete-btn")) {
-    jobs.splice(index, 1);
-    saveJobsToStorage();
-    renderJobs();
-
-    if (editMode && rowBeingEdited == index) {
-      editMode = false;
-      rowBeingEdited = null;
-      form.reset();
-      form.querySelector('button[type="submit"]').textContent = "Add Job";
-      document.getElementById("toggleit").textContent = "Job Level";
-    }
+    deleteIndex = index;
+    confirmMessage.textContent = `Are you sure you want to delete "${jobs[index].title}"?`;
+    confirmModal.classList.remove("hidden");
+    confirmModal.classList.add("flex");
   }
 });
 
-// Render jobs on initial load
-renderJobs();
+// Confirm delete
+confirmYes.addEventListener("click", () => {
+  if (deleteIndex !== null) {
+    jobs.splice(deleteIndex, 1);
+    localStorage.setItem("jobs", JSON.stringify(jobs));
+    loadJobs();
+  }
+  confirmModal.classList.add("hidden");
+  confirmModal.classList.remove("flex");
+  deleteIndex = null;
+});
+
+confirmNo.addEventListener("click", () => {
+  confirmModal.classList.add("hidden");
+  confirmModal.classList.remove("flex");
+  deleteIndex = null;
+});
+
+// Update job
+editForm.addEventListener("submit", e => {
+  e.preventDefault();
+  jobs[currentEditIndex] = {
+    title: editForm.title.value,
+    postedon: editForm.postedon.value,
+    applybefore: editForm.applybefore.value,
+    level: modalToggleLevel.textContent.trim(),
+    opening: editForm.opening.value,
+    education: editForm.education.value,
+    salary: editForm.salary.value,
+  };
+  localStorage.setItem("jobs", JSON.stringify(jobs));
+  modal.classList.add("hidden");
+  modal.classList.remove("flex");
+  loadJobs();
+});
+
+// Close edit modal
+closeModal.addEventListener("click", () => {
+  modal.classList.add("hidden");
+  modal.classList.remove("flex");
+});
